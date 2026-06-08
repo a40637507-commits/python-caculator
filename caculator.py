@@ -6,6 +6,15 @@ def add(num1, num2):
 def subtract(num1, num2):
     return num1 - num2
 
+def multiply(num1, num2):
+    return num1 * num2
+
+# 덧붙일 부분: 나누기 함수 (0으로 나누는 에러 방지)
+def divide(num1, num2):
+    if num2 == 0:
+        return "❌ 에러: 0으로 나눌 수 없습니다."
+    return num1 / num2
+
 # 프로그램 실행 부분
 if __name__ == "__main__":
     print("=== 🧮 파이썬 계산기 프로그램 ===")
@@ -26,6 +35,10 @@ if __name__ == "__main__":
     elif operator == "-":
         result = subtract(num1, num2)
         print(f"결과: {num1} - {num2} = {result}")
+    elif operator == "*":
+        print(f"결과: {num1} * {num2} = {multiply(num1, num2)}") # 추가
+    elif operator == "/":
+        print(f"결과: {num1} / {num2} = {divide(num1, num2)}") # 추가
         
     else:
         print("❌ 에러: + 또는 - 기호만 입력할 수 있습니다.")
